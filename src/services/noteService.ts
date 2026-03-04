@@ -27,7 +27,7 @@ export const fetchNotes = async (title:string, page:number):Promise<FetchNotesRe
 
 
 export const createNote = async ({ title, content, tag }: NoteFormValues):Promise<Note> => {
-    const response = await axios.post("https://notehub-public.goit.study/api/notes",
+    const response = await axios.post<Note>("https://notehub-public.goit.study/api/notes",
         {
             title: title,
             content: content,
